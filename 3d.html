@@ -62,12 +62,12 @@ terr2.position.set(23,.15,9);terr2.receiveShadow=true;scene.add(terr2);
 
 var ps=new THREE.Shape();
 ps.moveTo(-8,-5);ps.bezierCurveTo(-13,-2,-11,4,-5,5);ps.bezierCurveTo(0,6,4,3,7,4);ps.bezierCurveTo(12,5,13,-1,8,-4);ps.bezierCurveTo(4,-7,-3,-8,-8,-5);
-var copingMat=new THREE.MeshLambertMaterial({color:0xf3ecdd});
-var coping=new THREE.Mesh(new THREE.ExtrudeGeometry(ps,{depth:.34,bevelEnabled:false}),copingMat);
-coping.rotation.x=-Math.PI/2;coping.position.set(-8,0.02,3);coping.scale.set(1.06,1.06,1);scene.add(coping);
-var waterMat=new THREE.MeshPhongMaterial({color:0x4fb3d9,transparent:true,opacity:.9,shininess:120});
+var copingMat=new THREE.MeshLambertMaterial({color:0xd8cdb8});
+var coping=new THREE.Mesh(new THREE.ExtrudeGeometry(ps,{depth:.4,bevelEnabled:false}),copingMat);
+coping.rotation.x=-Math.PI/2;coping.position.set(-8,0.42,3);coping.scale.set(1.09,1.09,1);scene.add(coping);
+var waterMat=new THREE.MeshLambertMaterial({color:0x2f9ec4,transparent:true,opacity:.96});
 var water=new THREE.Mesh(new THREE.ShapeGeometry(ps),waterMat);
-water.rotation.x=-Math.PI/2;water.position.set(-8,.33,3);scene.add(water);
+water.rotation.x=-Math.PI/2;water.position.set(-8,.46,3);scene.add(water);
 
 var deckMat=new THREE.MeshLambertMaterial({map:plankTex('#8a5a3b','#734828')});
 var deck=new THREE.Mesh(new THREE.BoxGeometry(12,.9,9),deckMat);
@@ -108,14 +108,14 @@ var warm1=new THREE.PointLight(0xffb46a,0,26);warm1.position.set(24,3,9);scene.a
 var warm2=new THREE.PointLight(0xffb46a,0,26);warm2.position.set(-22,3.4,9);scene.add(warm2);
 
 function setDay(day){
-  if(day){scene.background=new THREE.Color(0xbfe3ec);scene.fog=new THREE.Fog(0xbfe3ec,80,180);amb.intensity=.55;sun.intensity=1.05;poolLight.intensity=0;warm1.intensity=0;warm2.intensity=0;led.visible=false;waterMat.color.set(0x4fb3d9);}
-  else{scene.background=new THREE.Color(0x121a30);scene.fog=new THREE.Fog(0x121a30,70,170);amb.intensity=.16;sun.intensity=.08;poolLight.intensity=1.6;warm1.intensity=1.4;warm2.intensity=1.1;led.visible=true;waterMat.color.set(0x2a7d9e);}
+  if(day){scene.background=new THREE.Color(0xbfe3ec);scene.fog=new THREE.Fog(0xbfe3ec,80,180);amb.intensity=.55;sun.intensity=1.05;poolLight.intensity=0;warm1.intensity=0;warm2.intensity=0;led.visible=false;waterMat.color.set(0x2f9ec4);}
+  else{scene.background=new THREE.Color(0x121a30);scene.fog=new THREE.Fog(0x121a30,70,170);amb.intensity=.16;sun.intensity=.08;poolLight.intensity=1.6;warm1.intensity=1.4;warm2.intensity=1.1;led.visible=true;waterMat.color.set(0x1e6f92);}
   document.getElementById('bDay').classList.toggle('on',day);
   document.getElementById('bNight').classList.toggle('on',!day);
 }
 function setStone(ivory){
   stoneMat.map=ivory?texIvory:texWalnut;stoneMat.needsUpdate=true;
-  copingMat.color.set(ivory?0xf3ecdd:0xc4ad8d);
+  copingMat.color.set(ivory?0xd8cdb8:0xa08663);
   document.getElementById('bIvory').classList.toggle('on',ivory);
   document.getElementById('bWalnut').classList.toggle('on',!ivory);
 }
@@ -139,7 +139,7 @@ addEventListener('resize',function(){camera.aspect=innerWidth/innerHeight;camera
 function loop(t){
   requestAnimationFrame(loop);
   if(!drag)theta+=.0006;
-  water.position.y=.33+Math.sin(t*.0016)*.015;
+  water.position.y=.46+Math.sin(t*.0016)*.012;
   updCam();
   renderer.render(scene,camera);
 }
