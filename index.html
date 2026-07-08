@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backyard Concept | Modern Tropical Resort</title>
+<style>
+  :root{
+    --bg:#faf7f0; --bg2:#f3ede1; --card:#ffffff; --line:#e7dfd0; --line2:#d8cdb8;
+    --ink:#2e2a24; --mut:#6f6656; --dim:#9a9080;
+    --terr:#c17a50; --palm:#5f7d5a; --sand:#d9c8a9; --ivory:#efe6d4; --walnut:#b59c7b;
+    --grad:linear-gradient(135deg,#c17a50,#5f7d5a);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  .sans{font-family:'Segoe UI',system-ui,sans-serif}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  header{padding:64px 0 40px;background:
+    radial-gradient(800px 400px at 90% -10%,rgba(193,122,80,.12),transparent),
+    radial-gradient(700px 380px at 0% 0%,rgba(95,125,90,.10),transparent)}
+  .badge{display:inline-block;padding:6px 16px;border:1px solid var(--line2);border-radius:999px;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--palm);margin-bottom:20px;font-family:'Segoe UI',sans-serif;font-weight:600}
+  h1{font-size:clamp(30px,4.4vw,50px);line-height:1.12;font-weight:700;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--terr)}
+  .sub{margin-top:16px;font-size:17px;color:var(--mut);max-width:720px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{padding:7px 15px;background:var(--card);border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--mut);font-family:'Segoe UI',sans-serif}
+  .chip b{color:var(--ink)}
+  section{padding:38px 0 8px}
+  h2{font-size:26px;font-weight:700;margin-bottom:8px}
+  .lead{color:var(--mut);margin-bottom:24px;max-width:780px}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card .k{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--terr);margin-bottom:8px;font-weight:700;font-family:'Segoe UI',sans-serif}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+  .card p,.card li{font-size:14.5px;color:var(--mut)}
+  .card ul{margin:8px 0 0 18px}
+  .card li{margin-bottom:7px}
+  .pal{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .sw{width:120px;font-family:'Segoe UI',sans-serif}
+  .sw .c{height:74px;border-radius:10px;border:1px solid var(--line2)}
+  .sw b{display:block;font-size:12.5px;margin-top:7px;color:var(--ink)}
+  .sw span{font-size:11.5px;color:var(--dim)}
+  .c-ivory{background:linear-gradient(135deg,#efe6d4,#e6dac2 55%,#f3ecdd)}
+  .c-walnut{background:linear-gradient(135deg,#b59c7b,#a08663 55%,#c4ad8d)}
+  .c-wood{background:linear-gradient(135deg,#8a5a3b,#7a4e33 55%,#96684a)}
+  .c-cream{background:linear-gradient(135deg,#f6f1e7,#efe8da)}
+  .c-green{background:linear-gradient(135deg,#5f7d5a,#4e6a4a)}
+  .c-water{background:linear-gradient(135deg,#7db9c7,#5fa3b4)}
+  .tabs{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:5px;margin:6px 0 18px;font-family:'Segoe UI',sans-serif}
+  .tab{border:0;background:transparent;color:var(--mut);padding:9px 20px;border-radius:9px;font-size:14px;cursor:pointer;font-weight:600}
+  .tab.on{background:var(--card);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.07)}
+  .cpane{display:none}
+  .cpane.on{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  table{width:100%;border-collapse:collapse;font-size:14px;font-family:'Segoe UI',sans-serif}
+  th{text-align:left;padding:12px 14px;color:var(--terr);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line2)}
+  td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+  td b{color:var(--ink)}
+  .tblwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:auto}
+  .note{margin:24px 0 0;padding:15px 20px;border:1px dashed var(--line2);border-radius:12px;font-size:13.5px;color:var(--dim);background:rgba(255,255,255,.5)}
+  svg text{font-family:'Segoe UI',system-ui,sans-serif}
+  footer{margin-top:48px;padding:32px 0 44px;border-top:1px solid var(--line);color:var(--dim);font-size:13px;font-family:'Segoe UI',sans-serif}
+  footer b{color:var(--mut)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="badge">Backyard Concept Board · South Florida Residence</div>
+    <h1>One surface, one story.<br><em>Resort calm, built for family life.</em></h1>
+    <p class="sub">A design direction for your pool terrace refresh: the freeform pool and both seating areas stay exactly where they live today. The ground plane becomes one continuous, warm travertine field with a single crafted wood moment, so the whole yard finally reads as one designed space instead of three eras of surfaces.</p>
+    <div class="meta">
+      <div class="chip">Pool: <b>unchanged</b></div>
+      <div class="chip">Layout: <b>unchanged</b></div>
+      <div class="chip">Surfaces: <b>fully unified</b></div>
+      <div class="chip">Style: <b>modern tropical, Mediterranean roots</b></div>
+      <div class="chip">Every material: <b>locally sourceable in FL</b></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <h2>The design idea in one line</h2>
+  <p class="lead">Your house already speaks: stucco, tile roof, arches. We do not fight it with cold gray modernism. We modernize the ground instead: one pale travertine field laid in the classic French pattern, one warm wood deck platform kept as the single accent, and greenery cleaned up to frame, not clutter. The result feels like the pool deck of a boutique resort that happens to belong to a Spanish house.</p>
+  <div class="grid g3">
+    <div class="card"><div class="k">Principle 1</div><h3>One field, one accent</h3><p>Travertine everywhere the ground is hard, wood in exactly one place: the raised dining platform. Two materials total. That restraint is what makes it read expensive.</p></div>
+    <div class="card"><div class="k">Principle 2</div><h3>The house picks the palette</h3><p>Pale ivory stone echoes the stucco, the wood echoes the roof's warmth. Mediterranean bones, modern-tropical mood, nothing trendy that dates in five years.</p></div>
+    <div class="card"><div class="k">Principle 3</div><h3>Barefoot and rain proof</h3><p>Tumbled travertine stays cool underfoot in August and grips when wet. Every surface slopes away from the house and drains, because this is South Florida, not a rendering.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Two concept directions</h2>
+  <p class="lead">Both keep the identical layout. The difference is temperature: Concept A is the bright resort read, Concept B is the moodier, tone-on-tone alternative you asked us to be free to propose.</p>
+
+  <div class="tabs" id="ctabs">
+    <button class="tab on" data-c="ca">Concept A · Ivory Coast</button>
+    <button class="tab" data-c="cb">Concept B · Walnut Dusk</button>
+  </div>
+
+  <div class="cpane on" id="ca">
+    <div class="grid g2">
+      <div class="card">
+        <div class="k">Primary recommendation</div>
+        <h3>French-pattern Ivory travertine, warm teak-tone deck</h3>
+        <p>Ivory travertine in the classic 4-size French (Versailles) pattern across the entire ground plane: pool surround, covered patio, lounge area, and walkways. The raised dining deck is rebuilt in warm wood tone (ipe or premium composite) with a picture-frame border, so it reads as furniture, not flooring. Pool coping switches to matching Ivory bullnose, and the waterline tile goes deep glass blue so the unchanged pool suddenly looks brand new.</p>
+        <div class="pal">
+          <div class="sw"><div class="c c-ivory"></div><b>Ivory travertine</b><span>French pattern, tumbled</span></div>
+          <div class="sw"><div class="c c-wood"></div><b>Teak-tone deck</b><span>ipe or composite</span></div>
+          <div class="sw"><div class="c c-water"></div><b>Glass blue waterline</b><span>pool refresh, optional</span></div>
+          <div class="sw"><div class="c c-green"></div><b>Palm green</b><span>planting frame</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="k">Why this wins for your house</div>
+        <ul>
+          <li>Ivory reflects heat, the most comfortable barefoot choice in South Florida sun</li>
+          <li>Brightens the whole yard in photos and at dusk, the clean resort look you described</li>
+          <li>Hides water spots and dried rain marks better than dark stone</li>
+          <li>Strong contrast with the wood deck makes both materials look intentional</li>
+          <li>Most widely stocked travertine color in Florida, easy for your contractor to source and match later</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cpane" id="cb">
+    <div class="grid g2">
+      <div class="card">
+        <div class="k">Alternative direction</div>
+        <h3>Walnut travertine, tone-on-tone with lighter deck</h3>
+        <p>Walnut travertine carries deeper caramel and honey movement across the same French pattern field. The deck flips strategy: a lighter, sand-toned board so the platform lifts out of the darker stone. Coping in matching Walnut bullnose, and planting gets one shade greener against the warmer ground. This is the moodier, wine-at-sunset version of the same yard.</p>
+        <div class="pal">
+          <div class="sw"><div class="c c-walnut"></div><b>Walnut travertine</b><span>French pattern, tumbled</span></div>
+          <div class="sw"><div class="c c-cream"></div><b>Sand-tone deck</b><span>composite, light board</span></div>
+          <div class="sw"><div class="c c-water"></div><b>Glass blue waterline</b><span>pool refresh, optional</span></div>
+          <div class="sw"><div class="c c-green"></div><b>Deep green</b><span>planting frame</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="k">Honest trade-offs</div>
+        <ul>
+          <li>Richer, warmer evening character, pairs beautifully with amber lighting</li>
+          <li>Runs hotter underfoot than Ivory in peak summer, worth knowing with kids</li>
+          <li>Shows dried water rings slightly more around the pool edge</li>
+          <li>Slightly less stock consistency between lots, order 10 percent extra from one lot</li>
+          <li>Our recommendation stays Concept A, but this renders beautifully if you prefer depth over brightness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Your yard, zoned as it is today</h2>
+  <p class="lead">Working plan from your brief, refined against photos and measurements once shared. Nothing moves; every zone just gets the new skin.</p>
+  <div class="card" style="padding:26px;overflow:auto">
+    <svg viewBox="0 0 1000 520" width="100%" style="min-width:760px">
+      <rect x="0" y="0" width="1000" height="520" rx="14" fill="#f3ede1"/>
+      <rect x="640" y="60" width="330" height="240" rx="18" fill="#9dbd8f" opacity=".55"/>
+      <text x="805" y="170" text-anchor="middle" fill="#43563e" font-size="15" font-weight="700">Open lawn</text>
+      <text x="805" y="192" text-anchor="middle" fill="#5c6f56" font-size="12">kept soft, for the kids</text>
+      <path d="M30,60 L620,60 L620,300 L970,300 L970,460 L30,460 Z" fill="#e9dfca"/>
+      <g stroke="#d8cbae" stroke-width="1.4" opacity=".8">
+        <line x1="80" y1="60" x2="80" y2="460"/><line x1="150" y1="60" x2="150" y2="460"/>
+        <line x1="220" y1="60" x2="220" y2="460"/><line x1="290" y1="60" x2="290" y2="460"/>
+        <line x1="30" y1="130" x2="620" y2="130"/><line x1="30" y1="200" x2="620" y2="200"/>
+        <line x1="30" y1="270" x2="620" y2="270"/><line x1="30" y1="340" x2="970" y2="340"/>
+        <line x1="30" y1="400" x2="970" y2="400"/>
+        <line x1="360" y1="60" x2="360" y2="460"/><line x1="430" y1="60" x2="430" y2="460"/>
+        <line x1="500" y1="60" x2="500" y2="460"/><line x1="560" y1="60" x2="560" y2="460"/>
+        <line x1="680" y1="300" x2="680" y2="460"/><line x1="760" y1="300" x2="760" y2="460"/>
+        <line x1="840" y1="300" x2="840" y2="460"/><line x1="910" y1="300" x2="910" y2="460"/>
+      </g>
+      <text x="325" y="90" text-anchor="middle" fill="#8a7c5f" font-size="12.5" font-weight="600">Continuous Ivory travertine field · French pattern</text>
+      <path d="M210,190 C160,150 240,120 300,140 C370,163 420,140 460,170 C505,204 470,260 410,270 C340,282 300,300 250,275 C200,250 245,218 210,190 Z" fill="#79b8c9" stroke="#5fa3b4" stroke-width="3"/>
+      <text x="330" y="212" text-anchor="middle" fill="#1e5561" font-size="14" font-weight="700">Freeform pool</text>
+      <text x="330" y="231" text-anchor="middle" fill="#2e6b77" font-size="11.5">unchanged · new Ivory bullnose coping + glass waterline</text>
+      <rect x="700" y="330" width="180" height="110" rx="12" fill="#8a5a3b"/>
+      <g stroke="#7a4e33" stroke-width="2"><line x1="712" y1="336" x2="712" y2="434"/><line x1="736" y1="336" x2="736" y2="434"/><line x1="760" y1="336" x2="760" y2="434"/><line x1="784" y1="336" x2="784" y2="434"/><line x1="808" y1="336" x2="808" y2="434"/><line x1="832" y1="336" x2="832" y2="434"/><line x1="856" y1="336" x2="856" y2="434"/></g>
+      <text x="790" y="380" text-anchor="middle" fill="#f6ecdd" font-size="13" font-weight="700">Raised dining deck</text>
+      <text x="790" y="398" text-anchor="middle" fill="#eddcc6" font-size="11">rebuilt in warm wood · one clean step</text>
+      <rect x="60" y="330" width="170" height="100" rx="12" fill="#e0d2b6"/>
+      <rect x="60" y="322" width="170" height="16" rx="8" fill="#c17a50" opacity=".85"/>
+      <text x="145" y="378" text-anchor="middle" fill="#6b5c41" font-size="13" font-weight="700">Lounge + awning</text>
+      <text x="145" y="396" text-anchor="middle" fill="#8a7a5c" font-size="11">same spot, refreshed furniture line</text>
+      <rect x="330" y="330" width="290" height="100" rx="12" fill="#efe6d4" stroke="#d8cdb8" stroke-width="2" stroke-dasharray="7 5"/>
+      <text x="475" y="378" text-anchor="middle" fill="#6b5c41" font-size="13" font-weight="700">Covered patio, against house</text>
+      <text x="475" y="396" text-anchor="middle" fill="#8a7a5c" font-size="11">same travertine runs inside the shade line, one seamless plane</text>
+      <rect x="30" y="470" width="940" height="30" rx="8" fill="#d9c8a9"/>
+      <text x="500" y="490" text-anchor="middle" fill="#6b5c41" font-size="12.5" font-weight="700">HOUSE · two-story Mediterranean, stucco + tile roof</text>
+      <g fill="#5f7d5a"><path d="M120,120 l0,-26 l-7,9 M120,94 l7,9" stroke="#5f7d5a" stroke-width="2.5" fill="none"/><path d="M560,120 l0,-26 l-7,9 M560,94 l7,9" stroke="#5f7d5a" stroke-width="2.5" fill="none"/></g>
+      <text x="120" y="80" text-anchor="middle" fill="#5f7d5a" font-size="10.5" font-weight="600">slope + drain away from house</text>
+    </svg>
+  </div>
+</section>
+
+<section>
+  <h2>The level change, solved</h2>
+  <div class="grid g2">
+    <div class="card"><div class="k">Recommendation</div><h3>Keep one honest step, make it a detail</h3><p>Instead of ramping the deck down or raising the stone (both expensive, both awkward with drainage), keep a single clean 140 to 150 mm step to the dining platform and celebrate it: a continuous travertine border frames the deck, the step edge gets a routed wood nosing, and a warm LED strip under the nosing makes it read like a floating platform at night while making the step visible and safe for the kids.</p></div>
+    <div class="card"><div class="k">South Florida practicality</div><ul>
+      <li>Stone field slopes 1.5 to 2 percent away from the house toward lawn and drain lines</li>
+      <li>Channel drain along the deck-to-stone joint so summer downpours never pond at the step</li>
+      <li>Tumbled, unfilled travertine surface for wet-foot grip around the pool</li>
+      <li>Sand-set over compacted base or mud-set per your contractor's preference, both render identically</li>
+      <li>Light planting cleanup: clean palm and green frame at the edges, zero new maintenance burden</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Buildable, off the shelf</h2>
+  <p class="lead">Every material in the render will be something your contractor can order in Florida the same week. The render is a promise; this table is how it gets kept.</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Element</th><th>Specification in the render</th><th>Sourcing reality</th></tr></thead>
+      <tbody>
+        <tr><td><b>Ground field</b></td><td>Ivory (or Walnut) travertine, French/Versailles pattern kit, tumbled and unfilled, 30 mm pavers</td><td>Stocked by all major FL stone suppliers as pre-bundled French pattern sets</td></tr>
+        <tr><td><b>Pool coping</b></td><td>Matching travertine bullnose, 305 x 610 mm</td><td>Standard companion product to the paver line, same lot ordering</td></tr>
+        <tr><td><b>Dining deck</b></td><td>Ipe hardwood or premium composite in teak tone, picture-frame border, hidden fasteners</td><td>Both available FL-wide; composite recommended for lowest maintenance</td></tr>
+        <tr><td><b>Step detail</b></td><td>Routed nosing with warm 2700K LED strip, wet-location rated</td><td>Off-the-shelf outdoor LED channel, any pool electrician can fit</td></tr>
+        <tr><td><b>Waterline tile (optional)</b></td><td>Deep blue glass mosaic band</td><td>Standard pool tile suppliers, renders included so you can decide later</td></tr>
+        <tr><td><b>Lighting (optional)</b></td><td>Warm path bollards + up-lights on palms, 2700K throughout</td><td>Low-voltage kits, no permit-heavy work</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>What you receive</h2>
+  <div class="grid g3">
+    <div class="card"><div class="k">Stage 1</div><h3>Concepts</h3><p>Both directions above developed against your photos and measurements, with reference imagery and a short written rationale for each, so the choice takes you ten minutes.</p></div>
+    <div class="card"><div class="k">Stage 2</div><h3>The renders</h3><p>One photorealistic hero angle of the chosen direction at golden hour, plus two secondary angles (from the covered patio, and across the pool toward the deck). Built to brief your contractor, dimensioned where it matters.</p></div>
+    <div class="card"><div class="k">Stage 3</div><h3>Files and revisions</h3><p>Two revision rounds included. You receive the SketchUp model, render files, and print-ready PDFs, so any future contractor conversation starts from the same source of truth.</p></div>
+  </div>
+  <div class="note">This board was prepared from your written brief alone. Photos and approximate measurements refine the plan and feed the render; the design direction and material logic above already hold.</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>CrewNexa</b> · Globally operating offshore engineering and design. Our operations follow ISO 27001 practices.<br>
+    Concept board prepared for a South Florida backyard refresh: freeform pool retained, surfaces unified, French-pattern travertine direction per the client brief.
+  </div>
+</footer>
+
+<script>
+  const tabs=document.querySelectorAll('.tab');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.cpane').forEach(p=>p.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById(t.dataset.c).classList.add('on');
+  }));
+</script>
+</body>
+</html>
